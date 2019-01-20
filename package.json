@@ -1,0 +1,10 @@
+{
+  "name": "fetchquest",
+  "version": "1.0.0",
+  "description": "A request wrapper around `window.fetch`",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehgoodenough/fetchquest"
+  }
+}
