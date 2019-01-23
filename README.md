@@ -2,6 +2,8 @@
 
 An easier-to-use wrapper around `window.fetch`, so you don't have to write all that tedious syntax whenever you want to make a request.
 
+Built on [cross-fetch](https://www.npmjs.com/package/cross-fetch), so it works on both client and server.
+
 ### How to Use ###
 
 - Accepts a request object, like you would with `window.fetch`.

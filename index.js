@@ -1,10 +1,12 @@
+const fetch = require("cross-fetch")
+
 module.exports = function FetchQuest(request) {
     if(request.body !== undefined) {
         request.body = JSON.stringify(request.body)
         request.headers = request.headers || {}
         request.headers["Content-Type"] = "application/json"
     }
-    return window.fetch(request.url, request).then((response) => {
+    return fetch(request.url, request).then((response) => {
         return response.clone().json().catch((error) => {
             return response.text()
         }).then((value) => {
@@ -15,8 +17,5 @@ module.exports = function FetchQuest(request) {
                 return value
             }
         })
-    }).catch((error) => {
-        // console.error(error)
-        throw error
     })
 }
