@@ -6,6 +6,10 @@ module.exports = function FetchQuest(request) {
         request.headers = request.headers || {}
         request.headers["Content-Type"] = "application/json"
     }
+    if(request.form !== undefined) {
+        request.body = new URLSearchParams(request.form)
+		delete request.form
+    }
     return fetch(request.url, request).then((response) => {
         return response.clone().json().catch((error) => {
             return response.text()
